@@ -2,20 +2,12 @@
 
 rm -r ~/.vim 2> /dev/null
 rm ~/.vimrc 2> /dev/null
+rm .done 2> /dev/null 
 
 git clone https://github.com/gmarik/vundle.git bundle/vundle
 
 ln -s "$PWD" ~/.vim
-# simple vimrc to bootstrap vundle
-ln -s "$PWD/.bootstrap" ~/.vimrc
-
+ln -s "$PWD/.vimrc" ~/.vimrc
 vim +BundleInstall +qall
 
-rm ~/.vimrc
-# real vimrc, contains same bundles, but contains all the settings
-# vim was complaining because it would load this first
-# then try to install the plugins, and some of the settings
-# are for the bundles loaded.
-#
-# simple solution, probably a better way to do this.
-ln -s "$PWD/.vimrc" ~/.vimrc
+touch .done
