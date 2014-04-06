@@ -11,11 +11,8 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'leshill/vim-json'
 Bundle 'pangloss/vim-javascript'
-
 Bundle 'amirh/HTML-AutoCloseTag'
-Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Bundle 'groenewege/vim-less'
-
 Bundle 'tpope/vim-markdown'
 Bundle 'mustache/vim-mustache-handlebars'
 
@@ -51,7 +48,7 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-:silent! colorscheme ir_black
+:silent! colorscheme grb256
 
 set omnifunc=syntaxcomplete#Complete 
 
