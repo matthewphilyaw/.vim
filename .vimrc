@@ -9,9 +9,15 @@ Bundle 'rainbow_parentheses.vim'
 Bundle 'ctrlp.vim'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'AutoComplPop'
-Bundle 'SuperTab-continued.'
-Bundle 'OmniCppComplete'
+Bundle 'leshill/vim-json'
+Bundle 'pangloss/vim-javascript'
+
+Bundle 'amirh/HTML-AutoCloseTag'
+Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+Bundle 'groenewege/vim-less'
+
+Bundle 'tpope/vim-markdown'
+Bundle 'mustache/vim-mustache-handlebars'
 
 filetype plugin on
 filetype indent on
