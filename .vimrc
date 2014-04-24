@@ -48,6 +48,7 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+set t_Co=256
 :silent! colorscheme grb256
 
 set omnifunc=syntaxcomplete#Complete 
@@ -92,7 +93,6 @@ set tags=tags;/
 set history=1000
 set nowrap
 set wildignore+=*.class,*.beam,*.jar,*/.git/*,*/.hg/*,*/.svn/*,*/build/* 
-set t_Co=256
 set colorcolumn=81
 
 no <C-h> <C-w>h  
@@ -109,3 +109,6 @@ map <leader>t :!ctags -R --languages=c,c++ --c++-kinds=+p --fields=+iaS --extra=
 :hi ColorColumn ctermbg=4
 :hi Pmenu ctermbg=4 gui=bold
 :hi PmenuSel ctermbg=9 gui=bold
+
+set laststatus=2
+set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
