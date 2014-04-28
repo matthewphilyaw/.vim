@@ -92,7 +92,7 @@ set hlsearch
 set tags=tags;/
 set history=1000
 set nowrap
-set wildignore+=*.class,*.beam,*.jar,*/.git/*,*/.hg/*,*/.svn/*,*/build/* 
+set wildignore+=*.class,*.beam,*.jar,*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/vendor/*,*/tmp/*,*/node_modules/*
 set colorcolumn=81
 
 no <C-h> <C-w>h  
@@ -100,7 +100,6 @@ no <C-j> <C-w>j
 no <C-k> <C-w>k
 no <C-l> <C-w>l
 
-nnoremap ; :
 let mapleader=","
 nmap <silent> ,/ :nohl<CR>
 nmap <leader>q :pclose<CR>
@@ -112,3 +111,7 @@ map <leader>t :!ctags -R --languages=c,c++ --c++-kinds=+p --fields=+iaS --extra=
 
 set laststatus=2
 set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
+
+set spelllang=en_us
+hi spellbad ctermfg=white ctermbg=red
+set spell
