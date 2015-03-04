@@ -14,7 +14,14 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'amirh/HTML-AutoCloseTag'
 Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-fugitive'
+Bundle 'klen/python-mode'
+Bundle 'davidhalter/jedi-vim'
 Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'kana/vim-textobj-user'
+Bundle 'bps/vim-textobj-python'
+Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'vim-scripts/argtextobj.vim'
 
 filetype plugin on
 filetype indent on
@@ -38,10 +45,42 @@ let g:rbpt_colorpairs = [
             \ ['red',         'firebrick3'],
             \ ]
 
+let g:pymode_rope = 0
+let g:pymode_python = 'python3'
+
+"Documentation
+let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'
+
+"Linting
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+" Auto check on save
+let g:pymode_lint_write = 1
+
+" Support virtualenv
+let g:pymode_virtualenv = 1
+
+" Enable breakpoints plugin
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_bind = '<leader>b'
+
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Don't autofold code
+let g:pymode_folding = 0
+
+
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 
 let g:ctrlp_show_hidden = 1
+
+:setlocal omnifunc=jedi#completions
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -49,17 +88,7 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 set t_Co=256
-:silent! colorscheme grb256
-
-set omnifunc=syntaxcomplete#Complete 
-
-let OmniCpp_GlobalScopeSearch   = 1
-let OmniCpp_DisplayMode         = 1
-let OmniCpp_ShowScopeInAbbr     = 1 "do not show namespace in pop-up
-let OmniCpp_ShowPrototypeInAbbr = 1 "show prototype in pop-up
-let OmniCpp_ShowAccess          = 1 "show access in pop-up
-let OmniCpp_SelectFirstItem     = 1 "select first item in pop-up
-set completeopt=menuone,menu,longest
+:silent! colorscheme wombat256
 
 let g:SuperTabCrMapping = 1
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
@@ -106,12 +135,6 @@ nmap <leader>q :pclose<CR>
 map <leader>t :!ctags -R --languages=c,c++ --c++-kinds=+p --fields=+iaS --extra=+q --totals src include <cr>
 
 :hi ColorColumn ctermbg=4
-:hi Pmenu ctermbg=4 gui=bold
-:hi PmenuSel ctermbg=9 gui=bold
 
 set laststatus=2
 set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
-
-set spelllang=en_us
-hi spellbad ctermfg=white ctermbg=red
-set spell
