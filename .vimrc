@@ -1,27 +1,33 @@
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set nocompatible
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 "let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
-Bundle 'rainbow_parentheses.vim'
-Bundle 'ctrlp.vim'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'leshill/vim-json'
-Bundle 'pangloss/vim-javascript'
-Bundle 'amirh/HTML-AutoCloseTag'
-Bundle 'groenewege/vim-less'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-fugitive'
-Bundle 'klen/python-mode'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'kana/vim-textobj-user'
-Bundle 'bps/vim-textobj-python'
-Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'vim-scripts/argtextobj.vim'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'rainbow_parentheses.vim'
+Plugin 'ctrlp.vim'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'leshill/vim-json'
+Plugin 'pangloss/vim-javascript'
+Plugin 'amirh/HTML-AutoCloseTag'
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-fugitive'
+Plugin 'klen/python-mode'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'kana/vim-textobj-user'
+Plugin 'bps/vim-textobj-python'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'vim-scripts/argtextobj.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'elixir-lang/vim-elixir'
+
+call vundle#end()
+filetype plugin indent on 
 
 filetype plugin on
 filetype indent on
@@ -81,11 +87,6 @@ let g:rbpt_loadcmd_toggle = 0
 let g:ctrlp_show_hidden = 1
 
 :setlocal omnifunc=jedi#completions
-
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
 
 set t_Co=256
 :silent! colorscheme wombat256
